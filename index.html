@@ -123,7 +123,7 @@ function timeout(ms) {
 async function checkAccess() {
   try {
     const res = await Promise.race([
-      fetch("https://mah-asal.bid/favicon.ico", { method: "HEAD" }),
+      fetch("https://mah-asal.bid/sitemap_index.xml", { method: "HEAD" }),
       timeout(2000)
     ]);
     // اگر رسپانس دارد اما کد خطا بود هم فیلتر محسوب می‌شود
