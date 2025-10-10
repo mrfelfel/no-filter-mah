@@ -1,79 +1,138 @@
 <!doctype html>
-<html ⚡ lang="fa" dir="rtl">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<title>ماه عسل | همسریابی و دوست‌یابی پایدار</title>
+<title>ماه عسل | دوست‌یابی و همسریابی پایدار</title>
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="description" content="ماه عسل، کامل‌ترین مرجع همسریابی، دوست‌یابی و صیغه‌یابی در ایران؛ یافتن همسر مناسب و شروع یک رابطه پایدار و امن.">
-<link rel="canonical" href="https://mah-asal.bid">
+<meta name="description" content="ماه عسل، جایی برای پیدا کردن عشق واقعی؛ دوست‌یابی، صیغه‌یابی و ازدواج پایدار در محیطی امن و محترمانه.">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
 <meta name="theme-color" content="#995bff">
-<script async src="https://cdn.ampproject.org/v0.js"></script>
-<style amp-boilerplate>
-body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}
-@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-</style>
-<noscript>
-<style amp-boilerplate>body{-webkit-animation:none;animation:none}</style>
-</noscript>
-<style amp-custom>
+
+<style>
 body {
-  font-family: Tahoma, sans-serif;
-  direction: rtl;
-  margin: 0;
-  padding: 20px;
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
   background: #fff;
   color: #222;
+  margin: 0;
+  padding: 20px;
+  direction: rtl;
 }
 h1, h2 { color: #995bff; margin-top: 0; }
+p.tagline {
+  font-size: 1.3em; font-weight: 600; margin-top: 8px; color: #333;
+}
 .buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-  margin-top: 20px;
+  display: flex; flex-direction: column; gap: 16px; margin-top: 24px;
 }
 a.btn {
-  display: block;
-  width: 100%;
-  padding: 16px 22px;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1.1em;
-  box-sizing: border-box;
+  display: block; width: 100%;
+  padding: 14px 20px; border-radius: 10px; color: #fff;
+  font-weight: bold; text-align: center; text-decoration: none;
+  font-size: 1.1em; transition: all .2s ease;
 }
+a.btn:hover { transform: translateY(-2px); opacity: .9; }
 .btn-web { background: #0088cc; }
 .btn-download { background: #4caf50; }
 .btn-login { background: #995bff; }
-ul { padding: 0; list-style: none; }
+
+.notice {
+  display: none;
+  background: #ffefef;
+  color: #b00020;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 18px;
+  font-size: 1.1em;
+}
+.loading {
+  display: none;
+  background: #eaf3ff;
+  color: #004085;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 18px;
+  font-size: 1.1em;
+}
+ul { list-style: none; padding: 0; }
 li { margin: 6px 0; }
+.highlight {
+  background: #f9f6ff;
+  border-right: 5px solid #995bff;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.2em;
+}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>ماه عسل</h1>
-  <p>به کامل‌ترین مرجع همسریابی و دوست‌یابی در ایران خوش آمدید.</p>
-  <div class="buttons">
-    <a class="btn btn-web" href="https://mah-asal1404.com">🌐 نسخه وب</a>
-    <a class="btn btn-download" href="https://c957596.parspack.net/c957596/mahasal-2.0.6.apk">📱 دانلود اندروید</a>
-    <a class="btn btn-login" href="https://mah-asal1404.com">🔑 ورود و عضویت</a>
+  <h1>ماه عسل</h1>
+  <p class="tagline">جایی برای شروع عشق واقعی و رابطه‌ای امن و پایدار ❤️</p>
+
+  <div class="highlight">
+    👩 دنبال دوست پسر می‌گردی؟  
+    👨 دنبال دوست دختر می‌گردی؟  
+    ✨ فقط چند کلیک تا آشنایی با کسی که منتظرته!
   </div>
+
+  <div class="buttons">
+    <a class="btn btn-web" data-href="https://mah-asal.bid">🌐 نسخه وب</a>
+    <a class="btn btn-download" data-href="https://mah-asal.bid/app.apk">📱 دانلود اندروید</a>
+    <a class="btn btn-login" data-href="https://mah-asal.bid">🔑 ورود و عضویت</a>
+  </div>
+
+  <div id="loading" class="loading">⏳ لطفاً صبر کنید...</div>
+  <div id="notice" class="notice">💡 برای دسترسی به لینک‌ها لطفاً فیلترشکن خود را روشن کنید.</div>
 </header>
 
 <main>
-  <h2>چرا ماه عسل؟</h2>
+  <h2>چرا ماه عسل؟</h2>
   <ul>
-    <li>✔ امنیت بالا و چت امن</li>
-    <li>✔ پروفایل‌های واقعی و تایید‌شده</li>
-    <li>✔ حفظ کامل حریم خصوصی</li>
-    <li>✔ محیط محترمانه و سالم</li>
+    <li>✔ امنیت بالا و چت رمزگذاری شده</li>
+    <li>✔ پروفایل‌های واقعی و تأیید شده</li>
+    <li>✔ حفظ کامل حریم خصوصی</li>
+    <li>✔ محیطی محترمانه و سالم</li>
   </ul>
 </main>
 
+<script>
+function timeout(ms) {
+  return new Promise((_, reject) => setTimeout(() => reject(new Error("timeout")), ms));
+}
+async function checkAccess() {
+  try {
+    const resPromise = fetch("https://mah-asal.bid/favicon.ico", { method: "HEAD", mode: "no-cors" });
+    await Promise.race([resPromise, timeout(2000)]);  // 2 ثانیه مهلت
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+document.querySelectorAll(".btn").forEach(btn => {
+  btn.addEventListener("click", async e => {
+    e.preventDefault();
+    const target = btn.dataset.href;
+    document.getElementById("loading").style.display = "block";
+    document.getElementById("notice").style.display = "none";
+    const ok = await checkAccess();
+    document.getElementById("loading").style.display = "none";
+    if (ok) {
+      window.location.href = target;
+    } else {
+      document.getElementById("notice").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+});
+</script>
+
 </body>
 </html>
-
